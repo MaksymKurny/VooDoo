@@ -33,18 +33,18 @@ paginationList.addEventListener('click', (e) => {
 // Додавання карток на сторінку
 const MakeCard = () => {
   return `
-  <article class="product-card w-[300px]">
+  <article class="product-card max-w-[300px]">
       <a class="product-photo rounded-4x1" href="#">
           <img class="product-image" src="" alt="product image"/>
           <span class="pre-owned-text rounded-smd bg-black">USED</span>
       </a>
       <div class="flex justify-between items-start self-stretch">
           <div style="text-align: left;">
-              <p class="product-name textform-black font-bold">Product name</p>
+              <p class="product-name textform-black">Product name</p>
               <p class="product-price textform-black font-bold">000 KR.</p>
           </div>
           <div style="text-align: right;">
-              <p class="textform-black font-medium">Condition</p>
+              <p class="textform-black font-medium h-11">Condition</p>
               <p class="textform-black fw-small">Slightly used</p>
           </div>
       </div>

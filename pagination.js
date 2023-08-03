@@ -48,7 +48,7 @@ function createPagination(totalPages, page){
     if(page < totalPages - 2){
       liTag += `<li><a class="pagination-btn dots">…</a></li>`;
     }
-    liTag += `<li><a class="last pagination-btn" onclick="createPagination(totalPages, ${totalPages})">${totalPages}</a></li>`;
+    liTag += `<li><a class="pagination-btn" href="#${totalPages}" onclick="createPagination(totalPages, ${totalPages})">${totalPages}</a></li>`;
   }
   element.innerHTML = liTag;
   return liTag;
