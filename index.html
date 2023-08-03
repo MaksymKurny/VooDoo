@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Maksym Kurniy"/>
+    <title>VooDoo Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Space+Grotesk:wght@300;400&family=Space+Mono&display=swap" rel="stylesheet">
+    
+</head>
+<body style="background: var(--light-sand, #FCF7E6);">
+    <!--Shopping Cart-->
+    <input type="checkbox" id="cart-toggle" hidden>
+    <nav class="cart">
+        <div style="margin: 49px 42px 22px 37px; display: flex;  justify-content: space-between; align-items: flex-start; gap: 51px;">
+            <h2 class="cart-logo">Shopping Cart</h2>
+            <label for="cart-toggle" class="cart-toggle" onclick>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <g clip-path="url(#clip0_2720_989)">
+                        <path d="M12 10.586L16.95 5.63599L18.364 7.04999L13.414 12L18.364 16.95L16.95 18.364L12 13.414L7.04999 18.364L5.63599 16.95L10.586 12L5.63599 7.04999L7.04999 5.63599L12 10.586Z" fill="#FCF7E6"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_2720_989">
+                            <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </label>
+        </div>
+        <hr style="margin: 0 44px 0 39px;">
+        <div class="textform-white" style="margin: 53px 44px 32px 37px">
+            <!--CART LIST-->
+            <ul class="buylist" role="list"></ul>
+        </div>
+        <hr style="margin: 0 44px 35px 39px;">
+        <div class="cart-total textform-white">
+            <p >TOTAL</p>
+            <p class="fullprice">0 KR.</p>
+        </div>
+    </nav>
+    <!--HEADER-->
+    <header style="border-bottom: 1px solid var(--black, #000); background: var(--light-sand, #FCF7E6);">
+        <div class="header sm:header">
+            <nav class="relative flex items-start justify-between mx-auto w-full">
+                <a class="flex items-start" aria-label="Home" href="#" >
+                    <img class="sm:logo-icon" src="swg/Logomark.svg" width="45" height="45" viewBox="0 0 45 45" alt="">
+                    <img class="sm:logo-text" src="swg/VooDoo Test.svg" width="193" height="98" viewBox="0 0 193 98" alt="">
+                </a>
+                <div class="header-right sm:header-right">
+                    <label for="cart-toggle" class="cart-toggle" onclick>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2 3C2 2.44772 2.44772 2 3 2H5C5.48884 2 5.90603 2.35341 5.98639 2.8356L6.34713 5H21C21.3214 5 21.6233 5.15452 21.8112 5.41529C21.9992 5.67606 22.0503 6.01128 21.9487 6.31623L18.9487 15.3162C18.8126 15.7246 18.4304 16 18 16H7C6.51116 16 6.09397 15.6466 6.01361 15.1644L4.15287 4H3C2.44772 4 2 3.55228 2 3ZM6.68046 7L7.84713 14H17.2792L19.6126 7H6.68046Z" fill="black"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 20C6 18.8954 6.89543 18 8 18C9.10457 18 10 18.8954 10 20C10 21.1046 9.10457 22 8 22C6.89543 22 6 21.1046 6 20Z" fill="black"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 20C15 18.8954 15.8954 18 17 18C18.1046 18 19 18.8954 19 20C19 21.1046 18.1046 22 17 22C15.8954 22 15 21.1046 15 20Z" fill="black"/>
+                        </svg>
+                    </label>
+                    <a class="textform-white sign-up-btn" href="/register">Sign-up</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--MAIN PAGE-->
+    <div class="contents md:px-32 px-6">
+        <!--DROP DOWN-->
+        <button class="beta-info" onclick="toggleDropdown()">
+            <div style="display: flex; width: 100%; align-items: flex-start; gap: 48px;">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 6px;">
+                    <img src="swg/alert-circle.svg" alt="">
+                    <span class="textform-white font-bold" style="font-size: 16px;">ALPHA</span>
+                </div>
+                <div class="info-dropdown">
+                    <span class="textform-white info-dropdown-text">Important info regarding our service</span>
+                    <div id="myDropdown" class="dropdown-content w-full">
+                        <hr style="color: #FCF7E6; width: 100%;">
+                        <p class="textform-white">We're working on a new service to offer you returned...</p>
+                        <hr style="color: #FCF7E6; width: 100%;">
+                    </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9L12 15L18 9" stroke="#FCF7E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </button>
+        
+        <!--SHOP GRID-->
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 48px;">
+            <div class="grid-row"></div>
+        </div>
+    </div>
+    <!--PAGES-->
+    <div style="display: flex; margin-top: 70px; margin-bottom: 96px; justify-content: center;">
+        <ul class="pagination">
+            <li><a class="pagination-btn active" href="#1">1</a></li>
+            <li><a class="pagination-btn" href="#2">2</a></li>
+            <li><a class="pagination-btn" href="#3">3</a></li>
+            <li><a class="pagination-btn" href="#4">4</a></li>
+            <li><a class="pagination-btn" href="#5">5</a></li>
+            <li><a class="pagination-btn dots">…</a></li>
+            <li><a class="pagination-btn" href="#25">25</a></li>
+        </ul>
+    </div>
+    <!--FOOTER-->
+    <div class="div-footer">
+        <footer class="footer">
+            <img class="footer-logo" src="swg/Logomark.svg" alt="">
+            <ul class="footer-block">
+                <li class="textform-black hover:underline"><a href="">FAQ</a></li>
+                <li class="textform-black hover:underline"><a href="">RETURNS</a></li>
+                <li class="textform-black hover:underline"><a href="">CONTACT</a></li>
+            </ul>
+            <ul class="footer-block">
+                <li class="textform-black hover:underline"><a href="">TERMS & ConditionS</a></li>
+                <li class="textform-black hover:underline"><a href="">PRIVACY POLICY</a></li>
+                <li class="textform-black hover:underline"><a href="">COOKIE POLICY</a></li>
+                <li class="textform-black hover:underline"><a href="">COOKIE SETTINGS</a></li>
+            </ul>
+            <ul class="footer-block">
+                <li class="textform-black hover:underline"><a href="">ABOUT SECOND CHANCE</a></li>
+                <li class="textform-black hover:underline"><a href="">CAREER</a></li>
+                <li class="textform-black hover:underline"><a href="">FACEBOOK</a></li>
+                <li class="textform-black hover:underline"><a href="">INSTAGRAM</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="code.js"></script>
+<script src="cart.js"></script>
+<script src="pagination.js"></script>
+</html>
