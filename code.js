@@ -47,7 +47,7 @@ const MakeCard = () => {
               <p class="textform-black fw-small">Slightly used</p>
           </div>
       </div>
-      <button type="button" class="product-add-btn textform-white">add to cart</button>
+      <button type="button" class="product-add-btn bubbly-button textform-white">add to cart</button>
   </article>
   `;
 };
@@ -98,3 +98,16 @@ const fetchProducts = async (page = 1) => {
 };
 
 fetchProducts();
+
+// Анімація кнопки покупки
+var bubblyButtons = document.querySelectorAll(".bubbly-button");
+bubblyButtons.forEach(el => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault;
+    // Скинути анімацію
+    e.target.classList.remove('animate');
+  
+    e.target.classList.add('animate');
+    setTimeout(function () { e.target.classList.remove('animate'); }, 700);
+  });
+});
