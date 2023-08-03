@@ -4,10 +4,6 @@ const cartProductsList = document.querySelector('.buylist');
 const fullPrice = document.querySelector('.fullprice');
 let price = 0;
 
-const randomId = () => {
-	return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-};
-
 const plusTotalPrice = (currentPrice) => {
 	return price += currentPrice;
 };

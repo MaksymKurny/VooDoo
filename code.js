@@ -20,7 +20,6 @@ function toggleDropdown() {
 let pagin = document.getElementsByClassName("pagination-btn");
 let currPage = 1;
 
-
 const paginationList = document.querySelector('.pagination');
 paginationList.addEventListener('click', (e) => {
   if (e.target.textContent == '…') {
